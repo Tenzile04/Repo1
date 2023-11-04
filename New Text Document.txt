@@ -1,0 +1,16 @@
+  static void Main(string[] args)
+        {
+            GetDataById(1);
+        }
+        static void GetDataById(int id)
+        {
+            string connectString = "Server=DESKTOP-Q400V6O\\SQLEXPRESS;Database=AdonetTaskDB;Trusted_Connection=True";
+            using (SqlConnection connection = new SqlConnection(connectString))
+            {
+                connection.Open();
+                SqlCommand sqlCommand=new SqlCommand("Select Name From Employees Where Id=1",connection);
+                string str=(string)sqlCommand.ExecuteScalar();
+                Console.WriteLine(str);
+            }
+        }
+

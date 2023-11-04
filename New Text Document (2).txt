@@ -1,0 +1,22 @@
+Create Database AdonetTaskDB
+Use AdonetTaskDB
+Create Table Departments
+(
+Id Int Identity Primary Key,
+Name Nvarchar(30) Not Null
+)
+Create Table Employees
+(
+Id Int Identity Primary Key,
+Name Nvarchar(30) Not Null,
+Code Nvarchar(30) Not Null,
+DepartmentId Int Foreign Key References Departments(Id)
+)
+Insert Into Departments
+Values
+('DepName')
+Insert Into Employees
+Values
+('Tanzila','tanzila1',1)
+
+Select Name From Employees Where Id=1
